@@ -23,6 +23,6 @@ runs:
   env:
     RUNC: ${{ inputs.run-c }}
     CBRANCH: ${{ inputs.c-branch }}
-    RUNF: ${{ inputs.run-f }}
+    RUNF: ${{ inputs.run-fortran }}
     FBRANCH: ${{ inputs.fortran-branch }}
-    USE_CC: $${{ inputs.c-compiler }}
+    USE_CC: ${{ inputs.c-compiler }}

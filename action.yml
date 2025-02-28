@@ -1,0 +1,28 @@
+# action.yml
+name: 'NetCDF Test Action'
+description: 'An action to run tests for the various netCDF projects'
+inputs:
+  run-c:
+    description: 'Whether or not the C tests should be run.'
+    required: true
+  c-branch:
+    description: 'Branch or tag of netCDF-C to use, default is main *or* current commit'
+    required: false
+  run-fortran:
+    description: 'Whether or not the Fortran tests should be run.'
+    required: true
+  fortran-branch:
+    description: 'Branch or tag of netCDF-Fortran to use, default is main *or* current commit'
+    required: false
+  c-compiler:
+    description: 'C compiler to use: gcc, clang, mpicc (from openmpich)'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    RUNC: ${{ inputs.run-c }}
+    CBRANCH: ${{ inputs.c-branch }}
+    RUNF: ${{ inputs.run-f }}
+    FBRANCH: ${{ inputs.f-branch }}
+    USE_CC: $${{ inputs.c-compiler }}

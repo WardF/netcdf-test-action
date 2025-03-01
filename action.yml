@@ -2,6 +2,9 @@
 name: 'NetCDF Test Action'
 description: 'An action to run tests for the various netCDF projects'
 inputs:
+  repo-type:
+    description: 'Specify if this is one of the root repos. c, fortran, cxx4, java'
+    required: false
   run-c:
     description: 'Whether or not the C tests should be run.'
     required: true
@@ -21,8 +24,11 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
+    REPO_TYPE: ${{ inputs.repo-type }}
     RUNC: ${{ inputs.run-c }}
     CBRANCH: ${{ inputs.c-branch }}
     RUNF: ${{ inputs.run-fortran }}
     FBRANCH: ${{ inputs.fortran-branch }}
     USE_CC: ${{ inputs.c-compiler }}
+  container:
+    options: '--mount type-bind,source=${{ github.workspace }},target=/netcdf-${{ inputs.repo-type }}'

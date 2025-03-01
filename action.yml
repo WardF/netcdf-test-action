@@ -30,5 +30,6 @@ runs:
     RUNF: ${{ inputs.run-fortran }}
     FBRANCH: ${{ inputs.fortran-branch }}
     USE_CC: ${{ inputs.c-compiler }}
-  container:
-    options: '--mount type-bind,source=${{ github.workspace }},target=/netcdf-${{ inputs.repo-type }}'
+  args:
+    - '--mount'
+    - 'type=bind,source=${{ github.workspace }},target=/netcdf-${{ inputs.repo-type }}'

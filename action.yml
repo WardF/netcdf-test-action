@@ -3,7 +3,7 @@ name: 'NetCDF Test Action'
 description: 'An action to run tests for the various netCDF projects'
 inputs:
   repo-type:
-    description: 'Specify if this is one of the root repos. c, fortran, cxx4, java'
+    description: 'Specify if this is one of the root netcdf repos. c, fortran, cxx4, java'
     required: false
   run-c:
     description: 'Whether or not the C tests should be run.'

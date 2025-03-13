@@ -38,5 +38,5 @@ runs:
     FBRANCH: ${{ inputs.fortran-branch }}
     USE_CC: ${{ inputs.c-compiler }}
     USE_BUILDSYSTEM: ${{ inputs.build-system }}
-    H5VER: ${{ inpus.hdf5-version }}
+    H5VER: ${{ inputs.hdf5-version }}
 

@@ -7,8 +7,11 @@ This action is used to run regression tests for netCDF-C, Java, C++. It uses the
 ```
 uses: WardF/thredds-test-action@v1
 with:
+    repo-type: '[c,fortran,cxx,java]'
+    build-system: '[cmake,autotools,both]'
+    hdf5-version: '1.14.3'
     run-c: 'TRUE'
     c-branch: 'v4.9.3'
-    run-f: 'TRUE'
-    f-branch: '{{ github.ref }}
-    c-compiler: 'gcc'
+    c-compiler: '[gcc,clang,mpicc]'
+    run-fortran: 'TRUE'
+    fortran-branch: '{{ github.ref }}

@@ -32,11 +32,12 @@ runs:
   image: 'Dockerfile'
   env:
     REPO_TYPE: ${{ inputs.repo-type }}
-    RUNC: ${{ inputs.run-c }}
-    CBRANCH: ${{ inputs.c-branch }}
-    RUNF: ${{ inputs.run-fortran }}
-    FBRANCH: ${{ inputs.fortran-branch }}
-    USE_CC: ${{ inputs.c-compiler }}
     USE_BUILDSYSTEM: ${{ inputs.build-system }}
     H5VER: ${{ inputs.hdf5-version }}
+    RUNC: ${{ inputs.run-c }}
+    CBRANCH: ${{ inputs.c-branch }}
+    USE_CC: ${{ inputs.c-compiler }}
+    RUNF: ${{ inputs.run-fortran }}
+    FBRANCH: ${{ inputs.fortran-branch }}
+
 

@@ -5,24 +5,28 @@ inputs:
   repo-type:
     description: 'Specify if this is one of the root netcdf repos. c, fortran, cxx4, java'
     required: false
+  build-system:
+    description: 'Build System to test. cmake, autotools, both'
+    required: true
+  hdf5-version:
+    description: 'HDF5 Version to test against. Currently no support for versions with a tag identifier, e.g. 1.14.0-1: default 1.14.3'
+    required: false
   run-c:
     description: 'Whether or not the C tests should be run.'
     required: true
   c-branch:
     description: 'Branch or tag of netCDF-C to use, default is main *or* current commit'
     required: false
+  c-compiler:
+    description: 'C compiler to use: gcc, clang, mpicc (from openmpich)'
+    required: true
   run-fortran:
     description: 'Whether or not the Fortran tests should be run.'
     required: true
   fortran-branch:
     description: 'Branch or tag of netCDF-Fortran to use, default is main *or* current commit'
     required: false
-  c-compiler:
-    description: 'C compiler to use: gcc, clang, mpicc (from openmpich)'
-    required: true
-  build-system:
-    description: 'Build System to test. cmake, autotools, both'
-    required: true
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -34,4 +38,5 @@ runs:
     FBRANCH: ${{ inputs.fortran-branch }}
     USE_CC: ${{ inputs.c-compiler }}
     USE_BUILDSYSTEM: ${{ inputs.build-system }}
+    H5VER: ${{ inpus.hdf5-version }}
 

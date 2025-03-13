@@ -20,6 +20,9 @@ inputs:
   c-compiler:
     description: 'C compiler to use: gcc, clang, mpicc (from openmpich)'
     required: true
+  build-system:
+    description: 'Build System to test. cmake, autotools, both'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -30,4 +33,5 @@ runs:
     RUNF: ${{ inputs.run-fortran }}
     FBRANCH: ${{ inputs.fortran-branch }}
     USE_CC: ${{ inputs.c-compiler }}
+    USE_BUILDSYSTEM: ${{ inputs.build-system }}
 

@@ -44,6 +44,7 @@ runs:
     RUNC: ${{ inputs.run-c }}
     CBRANCH: ${{ inputs.c-branch }}
     USE_CC: ${{ inputs.c-compiler }}
+    MPICH_VERSION: ${{ inputs.mpich-version }}
     RUNF: ${{ inputs.run-fortran }}
     FBRANCH: ${{ inputs.fortran-branch }}
 

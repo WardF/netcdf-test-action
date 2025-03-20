@@ -9,9 +9,11 @@ uses: WardF/thredds-test-action@v1
 with:
     repo-type: '[c,fortran,cxx,java]'
     build-system: '[cmake,autotools,both]'
+    ctest-repeat: '3'
     hdf5-version: '1.14.3'
     run-c: 'TRUE'
     c-branch: 'v4.9.3'
     c-compiler: '[gcc,clang,mpicc]'
+    mpich-version: '4.3.0'
     run-fortran: 'TRUE'
     fortran-branch: '{{ github.ref }}

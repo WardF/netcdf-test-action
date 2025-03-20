@@ -8,6 +8,9 @@ inputs:
   build-system:
     description: 'Build System to test. cmake, autotools, both'
     required: true
+  ctest-repeat:
+    description: 'Number of times ctest will try to repeat until success. default: 3'
+    required: false
   hdf5-version:
     description: 'HDF5 Version to test against. Currently no support for versions with a tag identifier, e.g. 1.14.0-1: default 1.14.3'
     required: false
@@ -20,6 +23,9 @@ inputs:
   c-compiler:
     description: 'C compiler to use: gcc, clang, mpicc (from openmpich)'
     required: true
+  mpich-version:
+    description: 'mpich version to install.  If none specified, underlying package-manager provided version used.'
+    required: false
   run-fortran:
     description: 'Whether or not the Fortran tests should be run.'
     required: true
@@ -33,6 +39,7 @@ runs:
   env:
     REPO_TYPE: ${{ inputs.repo-type }}
     USE_BUILDSYSTEM: ${{ inputs.build-system }}
+    CTEST_REPEAT: ${{ inputs.ctest-repeat }}
     H5VER: ${{ inputs.hdf5-version }}
     RUNC: ${{ inputs.run-c }}
     CBRANCH: ${{ inputs.c-branch }}

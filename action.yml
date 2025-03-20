@@ -39,12 +39,12 @@ runs:
   env:
     REPO_TYPE: ${{ inputs.repo-type }}
     USE_BUILDSYSTEM: ${{ inputs.build-system }}
-    CTEST_REPEAT: ${{ inputs.ctest-repeat }}
+    CTEST_REPEAT: ${{ inputs.ctest-repeat || 3 }}
     H5VER: ${{ inputs.hdf5-version }}
     RUNC: ${{ inputs.run-c }}
     CBRANCH: ${{ inputs.c-branch }}
     USE_CC: ${{ inputs.c-compiler }}
-    MPICHVER: ${{ inputs.mpich-version || '' }}
+    MPICHVER: ${{ inputs.mpich-version || '4.3.0' }}
     RUNF: ${{ inputs.run-fortran }}
     FBRANCH: ${{ inputs.fortran-branch }}
 

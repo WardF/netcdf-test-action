@@ -5,3 +5,4 @@ USER root
 ENV HOME=/home/tester
 WORKDIR /home/tester
 ENV GITHUB_ACTIONS=TRUE
+ENV MPICHVER='default'

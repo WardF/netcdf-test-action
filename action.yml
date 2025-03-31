@@ -32,6 +32,12 @@ inputs:
   fortran-branch:
     description: 'Branch or tag of netCDF-Fortran to use, default is main *or* current commit'
     required: false
+  run-java:
+    description: 'Whether or not the Java tests should be run.'
+    required: false
+  java-branch:
+    description: 'Branch or tag of netCDF-Java to use, default is maint-5.x'
+    required: false
 
 runs:
   using: 'docker'
@@ -44,8 +50,8 @@ runs:
     RUNC: ${{ inputs.run-c }}
     CBRANCH: ${{ inputs.c-branch }}
     USE_CC: ${{ inputs.c-compiler }}
-    MPICHVER: ${{ inputs.mpich-version || '4.3.0' }}
+    MPICHVER: ${{ inputs.mpich-version || 'default' }}
     RUNF: ${{ inputs.run-fortran }}
     FBRANCH: ${{ inputs.fortran-branch }}
-
-
+    RUNJAVA: ${{ inputs.run-java || 'FALSE' }}
+    JAVABRANCH: ${{ inputs.java-branch || 'maint-5.x' }}

@@ -16,4 +16,6 @@ with:
     c-compiler: '[gcc,clang,mpicc]'
     mpich-version: '4.3.0'
     run-fortran: 'TRUE'
-    fortran-branch: '{{ github.ref }}
+    fortran-branch: '{{ github.ref }}'
+    run-java: 'TRUE'
+    java-branch: '{{ github.ref}}'

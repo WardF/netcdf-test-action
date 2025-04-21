@@ -14,6 +14,8 @@ with:
     run-c: 'TRUE'
     c-branch: 'v4.9.3'
     c-compiler: '[gcc,clang,mpicc]'
+    cmake-c-options: '-DENABLE_HDF5=FALSE'
+    autotools-c-options: '--disable-hdf5'
     mpich-version: '4.3.0'
     run-fortran: 'TRUE'
     fortran-branch: '{{ github.ref }}'

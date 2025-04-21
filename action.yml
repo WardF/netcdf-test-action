@@ -23,6 +23,12 @@ inputs:
   c-compiler:
     description: 'C compiler to use: gcc, clang, mpicc (from openmpich)'
     required: true
+  cmake-c-options:
+    description: 'Additional options to pass to cmake'
+    required: false
+  autotools-c-options:
+    description: 'Additional options to pass to autotools'
+    required: false
   mpich-version:
     description: 'mpich version to install.  If none specified, underlying package-manager provided version used.'
     required: false
@@ -55,3 +61,5 @@ runs:
     FBRANCH: ${{ inputs.fortran-branch }}
     RUNJAVA: ${{ inputs.run-java || 'FALSE' }}
     JAVABRANCH: ${{ inputs.java-branch || 'maint-5.x' }}
+    CMAKE_COPTS: ${{ inputs.cmake-c-options || '' }}
+    AC_COPTS: ${{ inputs.autotools-c-options || '' }}

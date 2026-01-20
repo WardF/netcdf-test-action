@@ -12,7 +12,7 @@ inputs:
     description: 'Number of times ctest will try to repeat until success. default: 3'
     required: false
   hdf5-version:
-    description: 'HDF5 Version to test against. Currently no support for versions with a tag identifier, e.g. 1.14.0-1: default 1.14.3'
+    description: 'HDF5 Version to test against. Currently no support for versions with a tag identifier, e.g. 1.14.0-1: default 1.14.6'
     required: false
   run-c:
     description: 'Whether or not the C tests should be run.'

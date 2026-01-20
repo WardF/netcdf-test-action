@@ -5,12 +5,12 @@ This action is used to run regression tests for netCDF-C, Java, C++. It uses the
 ## Example Usage
 
 ```
-uses: WardF/thredds-test-action@v1
+uses: WardF/thredds-test-action@v2
 with:
     repo-type: '[c,fortran,cxx,java]'
     build-system: '[cmake,autotools,both]'
     ctest-repeat: '3'
-    hdf5-version: '1.14.3'
+    hdf5-version: '1.14.6'
     run-c: 'TRUE'
     c-branch: 'v4.9.3'
     c-compiler: '[gcc,clang,mpicc]'

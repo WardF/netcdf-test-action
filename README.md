@@ -5,7 +5,7 @@ This action is used to run regression tests for netCDF-C, Java, C++. It uses the
 ## Example Usage
 
 ```
-uses: WardF/thredds-test-action@v2
+uses: Unidata/netcdf-test-action@v2
 with:
     repo-type: '[c,fortran,cxx,java]'
     build-system: '[cmake,autotools,both]'

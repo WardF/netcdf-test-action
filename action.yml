@@ -38,6 +38,12 @@ inputs:
   fortran-branch:
     description: 'Branch or tag of netCDF-Fortran to use, default is main *or* current commit'
     required: false
+  run-cxx4:
+    description: 'Whether or not the cxx4 tests should be run.'
+    required: true
+  cxx4-branch:
+    description: 'Branch or tag of netCDF-Fortran to use, default is main *or* current commit'
+    required: false
   run-java:
     description: 'Whether or not the Java tests should be run.'
     required: false
@@ -59,6 +65,8 @@ runs:
     MPICHVER: ${{ inputs.mpich-version || 'default' }}
     RUNF: ${{ inputs.run-fortran }}
     FBRANCH: ${{ inputs.fortran-branch }}
+    RUNCXX4: ${{ inputs.run-cxx4}}
+    CXX4BRANCH: ${{ inputs.cxx4-branch}}
     RUNJAVA: ${{ inputs.run-java || 'FALSE' }}
     JAVABRANCH: ${{ inputs.java-branch || 'maint-5.x' }}
     CMAKE_COPTS: ${{ inputs.cmake-c-options || '' }}

@@ -1,6 +1,6 @@
 # Container that runs netCDF Regression testing
 # local directory is in /github/workspace.
-FROM unidata/nctests:1.13.4
+FROM unidata/nctests:1.13.9
 USER root
 ENV HOME=/home/tester
 WORKDIR /home/tester

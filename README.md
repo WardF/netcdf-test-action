@@ -5,7 +5,7 @@ This action is used to run regression tests for netCDF-C, Java, C++. It uses the
 ## Example Usage
 
 ```
-uses: Unidata/netcdf-test-action@v2
+uses: Unidata/netcdf-test-action@v3
 with:
     repo-type: '[c,fortran,cxx,java]'
     build-system: '[cmake,autotools,both]'
@@ -19,5 +19,7 @@ with:
     mpich-version: '4.3.0'
     run-fortran: 'TRUE'
     fortran-branch: '{{ github.ref }}'
+    run-cxx4: 'TRUE'
+    cxx4-branch: '{{ github.ref }}'
     run-java: 'TRUE'
     java-branch: '{{ github.ref}}'
